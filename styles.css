@@ -1,0 +1,302 @@
+:root {
+  --offwhite: #EDEDED;
+  --offblack: #222222;
+  --baured: #9D2719;
+  --baublue: #154084;
+  --bauyellow: #D7B418;
+  --baugreen: #41be52;
+  --fonts: 'Satoshi', sans-serif;
+  --border-gap: 12px;
+  --border-expand: 8px;
+  --border-size: 4px;
+  --border-nonhover: calc(var(--border-gap) + var(--border-size));
+  --border-gap-hover: calc(var(--border-gap) + var(--border-expand));
+  --border-hover: calc(var(--border-gap-hover) + var(--border-size));
+}
+
+
+@keyframes slideUpHi {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wiggle {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(4px, 5px); }
+  50% { transform: translate(0, 8px); }
+  75% { transform: translate(-5px, 4px); }
+  100% { transform: translate(0, 0); }
+}
+
+#homepage {
+  background-color: var(--offwhite);
+  color: var(--offblack);
+  font-family: var(--fonts);
+  padding: 20px;
+}
+
+#intro {
+  margin: 8rem auto 0 auto;
+  text-align: center;
+}
+
+#intro p {
+  margin-bottom: 4rem;
+  transform: translateY(100px);
+  animation: slideUpHi 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.65s;
+  font-size: 1.5rem;
+}
+
+#hi, #yt-title {
+  font-size: 13rem;
+  margin-bottom: 0;
+  font-weight: 900;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUpHi 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+#yt-title {
+  color: var(--baured);
+}
+
+span#Ethan {
+  position: relative;
+  display: inline-block;
+  background: url(images/square-shit.gif) no-repeat center/cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+#homepage a {
+  color: var(--offwhite);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 0 var(--offblack);
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 14rem;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  font-size: 3.2rem;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  animation: wiggle 3s infinite ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect */
+#homepage ul li a:hover {
+  animation-play-state: paused;
+  transition: 0.2s;
+}
+
+/* List styles */
+#homepage ul, #socials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+#homepage ul li {
+  margin: 0;
+  padding: 0;
+}
+
+/* SVG button (first button) */
+#homepage ul li:nth-child(3n+1) a .button-svg {
+  position: absolute;
+  inset: 0;
+  border-radius: 10% !important;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#graphicdesign a {
+  background-color: var(--baublue);
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) var(--baublue);
+}
+
+#graphicdesign a:hover{
+  background-color: var(--baublue);
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) var(--baublue);
+}
+
+#ytvids a {
+  background-color: var(--baured);
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) var(--baured);
+}
+
+#ytvids a:hover{
+  background-color: var(--baured);
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) var(--baured);
+}
+
+#other a {
+  background-color: var(--bauyellow);
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) var(--bauyellow);
+}
+
+#other a:hover{
+  background-color: var(--bauyellow);
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) var(--bauyellow);
+}
+
+#strawpage {
+  display: flex;
+  text-decoration: none;
+  background-color: var(--baugreen);
+  color: var(--offwhite);
+  align-items: center;
+  justify-content: center;
+  margin: 7rem 26rem 7rem 26rem;
+  padding: 1rem;
+  scale: 1.2;
+  -webkit-scale: 1.2;
+  font-family: var(--fonts);
+  box-shadow: 0 0 0 calc(var(--border-gap) - 5px) var(--offwhite), 0 0 0 calc(var(--border-nonhover) - 5px) var(--baugreen);
+  border-radius: 200rem;
+}
+
+#strawpage:hover {
+  box-shadow: 0 0 0 calc(var(--border-gap-hover) - 3px) var(--offwhite), 0 0 0 calc(var(--border-hover) - 3px) var(--baugreen);
+  transition: 0.2s;
+}
+
+
+#socialul {
+  width: 50% !important;
+  margin: 0 auto !important;
+}
+
+#socials {
+  background-color: var(--offwhite);
+  padding-bottom: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#socials a{
+  width: 100%;
+  height: 100%;
+}
+
+#socials li {
+  animation: wiggle 3s infinite ease-in-out;
+  animation-delay: -1.2s;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  transition: 0.2s;
+}
+
+#socials li:hover {
+  scale: 1.1;
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+
+#instagram:hover {
+    -webkit-filter: drop-shadow(2px 2px 0 #ba0041)
+                  drop-shadow(-2px -2px 0 #ba0041);
+  filter: drop-shadow(2px 2px 0 #ba0041) 
+          drop-shadow(-2px -2px 0 #ba0041);
+}
+
+#instagram {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg);
+}
+
+#discord:hover {
+    -webkit-filter: drop-shadow(2px 2px 0 #493ad6)
+                  drop-shadow(-2px -2px 0 #493ad6);
+  filter: drop-shadow(2px 2px 0 #493ad6) 
+          drop-shadow(-2px -2px 0 #493ad6);
+}
+
+#discord {
+  background-image: url(https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-square-color-icon.svg);
+}
+
+.invisible-button {
+  position: absolute;
+  top: 0; /* adjust to align exactly with visible button */
+  left: 0; /* adjust to align exactly with visible button */
+  width: 150px; /* same as visible button */
+  height: 50px; /* same as visible button */
+  opacity: 0; /* invisible but clickable */
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 2; /* above visible button */
+}
+
+/* The popup container */
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0,0,0,0.5);
+  scale: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+  z-index: 1000;
+}
+
+/* Popup visible state */
+.popup.show {
+  scale: 1;
+  pointer-events: auto;
+}
+
+/* Popup content box */
+.popup-content {
+  background-color: #493ad6;
+  color: var(--offwhite);
+  font-family: var(--fonts);  
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: center;
+}
+
+
+#spotify a{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg);
+  background-size: 100%;
+  background-position: 20% 50%;
+}
+
+#spotify:hover {
+    -webkit-filter: drop-shadow(2px 2px 0 #207918)
+                  drop-shadow(-2px -2px 0 #207918);
+  filter: drop-shadow(2px 2px 0 #207918) 
+          drop-shadow(-2px -2px 0 #207918);
+}

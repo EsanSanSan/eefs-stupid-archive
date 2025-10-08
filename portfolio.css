@@ -1,0 +1,218 @@
+:root {
+  --offwhite: #EDEDED;
+  --offblack: #222222;
+  --baured: #9D2719;
+  --baublue: #154084;
+  --bauyellow: #D7B418;
+  --fonts: 'Satoshi', sans-serif;
+  --border-gap: 12px;
+  --border-expand: 8px;
+  --border-size: 4px;
+  --border-nonhover: calc(var(--border-gap) + var(--border-size));
+  --border-gap-hover: calc(var(--border-gap) + var(--border-expand));
+  --border-hover: calc(var(--border-gap-hover) + var(--border-size));
+}
+
+@keyframes slideUpHi {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Slide-up animation for grid items */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to all grid items */
+#videolist li {
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* --- Staggered delays for bottom-up appearance --- */
+/* Bottom row first (example assumes 3 columns) */
+#videolist li:nth-child(7),
+#videolist li:nth-child(8),
+#videolist li:nth-child(9) {
+  animation-delay: 0.4s;
+}
+
+/* Middle row */
+#videolist li:nth-child(4),
+#videolist li:nth-child(5),
+#videolist li:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Top row */
+#videolist li:nth-child(1),
+#videolist li:nth-child(2),
+#videolist li:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+/* Optional: tiny stagger *within* each row for a natural flow */
+#videolist li:nth-child(3n+1) { animation-delay: calc(animation-delay + 0s); }
+#videolist li:nth-child(3n+2) { animation-delay: calc(animation-delay + 0.1s); }
+#videolist li:nth-child(3n+3) { animation-delay: calc(animation-delay + 0.2s); }
+
+
+body {
+  background-color: var(--offwhite);
+  color: var(--offblack);
+  font-family: var(--fonts);
+  margin: 0;
+  padding: 20px;
+}
+
+#intro {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+#intro #title {
+  font-size: 13rem;
+  color: var(--baublue);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUpHi 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+#intro p {
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUpHi 0.8s ease-out forwards;
+  animation-delay: 0.65s;
+}
+
+/* Grid container for links */
+#videolist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rem;
+  justify-content: center;   /* ✅ Centers the grid as a whole */
+  justify-items: center;     /* Keeps individual items centered within cells */
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  max-width: fit-content;    /* ✅ Makes the container width shrink to grid size */
+}
+
+/* Buttons */
+#videolist li a {
+  position: relative; /* ✅ allows span to position relative to button box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--offwhite);
+  text-shadow: var(--offblack) 2.5px 2.5px 0;
+  font-weight: 700;
+  font-size: 2.8rem;
+  text-decoration: none;
+  animation: wiggle 3s infinite ease-in-out;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+/* Hover effect */
+#videolist li a:hover {
+  transition: 0.2s;
+  animation-play-state: paused;
+}
+
+#button-home a {
+  background-color: var(--baured);
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite),
+              0 0 0 var(--border-nonhover) var(--baured);
+  width: 300px;
+  height: 300px;
+}
+
+#button-home a:hover {
+  background-color: var(--baured);
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite),
+              0 0 0 var(--border-hover) var(--baured);
+}
+
+#button-clouds-poster a {
+  --height: 463px;
+  background-image: url(images/clouds-poster.png);
+  background-size: cover;
+  width: 300px;
+  height: var(--height);
+  border-radius: 0%;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite),
+              0 0 0 var(--border-nonhover) #286a93;
+}
+
+#button-clouds-poster a:hover {
+  background-color: #6cccff;
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite),
+              0 0 0 var(--border-hover) #6cccff;
+}
+
+a span {
+  position: absolute;
+  top: calc(100% + calc(var(--border-nonhover) + 0.75rem)); /* places below shadow ring */
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--offblack);
+  text-shadow: none;
+  font-size: 30%;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: top 0.2s ease; /* smooth motion when hovering */
+}
+
+/* ✅ adjust for hover border expansion */
+#videolist li a:hover span {
+  top: calc(100% + calc(var(--border-nonhover) + 1rem));
+}
+
+#button-skull-poster a {
+  --height: 400px;
+  background-image: url(images/skull-poster.png);
+  background-position: center;
+  background-size: contain;
+  width: 300px;
+  height: var(--height);
+  border-radius: 0%;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite),
+              0 0 0 var(--border-nonhover) #612626;
+}
+
+#button-skull-poster a:hover {
+  background-color: #612626;
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite),
+              0 0 0 var(--border-hover) #c46565;
+}
+
+a {
+  background-color: var(--bauyellow);
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(4px, 5px); }
+  50% { transform: translate(0, 8px); }
+  75% { transform: translate(-5px, 4px); }
+  100% { transform: translate(0, 0); }
+}

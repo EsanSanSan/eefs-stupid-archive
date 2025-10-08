@@ -1,0 +1,218 @@
+:root {
+  --offwhite: #EDEDED;
+  --offblack: #222222;
+  --baured: #9D2719;
+  --baublue: #154084;
+  --bauyellow: #D7B418;
+  --fonts: 'Satoshi', sans-serif;
+  --border-gap: 12px;
+  --border-expand: 8px;
+  --border-size: 4px;
+  --border-nonhover: calc(var(--border-gap) + var(--border-size));
+  --border-gap-hover: calc(var(--border-gap) + var(--border-expand));
+  --border-hover: calc(var(--border-gap-hover) + var(--border-size));
+}
+
+@keyframes slideUpHi {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-up animation for grid items */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to all grid items */
+#videolist li {
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* --- Staggered delays for bottom-up appearance --- */
+/* Bottom row first (example assumes 3 columns) */
+#videolist li:nth-child(7),
+#videolist li:nth-child(8),
+#videolist li:nth-child(9) {
+  animation-delay: 0.4s;
+}
+
+/* Middle row */
+#videolist li:nth-child(4),
+#videolist li:nth-child(5),
+#videolist li:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Top row */
+#videolist li:nth-child(1),
+#videolist li:nth-child(2),
+#videolist li:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+body {
+  background-color: var(--offwhite);
+  color: var(--offblack);
+  font-family: var(--fonts);
+  margin: 0;
+  padding: 20px;
+}
+
+#intro {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+#intro #title {
+  font-size: 13rem;
+  color: var(--baured);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUpHi 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+#intro p {
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUpHi 0.8s ease-out forwards;
+  animation-delay: 0.65s;
+}
+
+/* Grid container for links */
+#videolist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rem;
+  justify-content: center;   /* ✅ Centers the grid as a whole */
+  justify-items: center;     /* Keeps individual items centered within cells */
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  max-width: fit-content;    /* ✅ Makes the container width shrink to grid size */
+}
+
+/* Buttons */
+#videolist li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  color: var(--offwhite);
+  text-shadow: var(--offblack) 2px 2px 0;
+  font-weight: 700;
+  font-size: 2.8rem;
+  text-decoration: none;
+  animation: wiggle 3s infinite ease-in-out;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+
+#homepage ul li a .button-svg {
+background-image: url(svgs/feenie.svg);
+  position: absolute;
+  inset: 0;
+  border-radius: 10%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#button-home a{
+  background-color: var(--baured);
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) var(--baured);
+}
+
+#button-home a:hover{
+  background-color: var(--baured);
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) var(--baured);
+}
+
+#button-aceattorney a {
+  background-image: url(svgs/feenie.svg);
+  background-position: 30% 30%;
+  background-repeat: no-repeat;
+  background-size: 160%;
+}
+
+#button-aceattorney a{
+  background-color: #d3bd5c;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) #d3bd5c;
+}
+
+#button-aceattorney a:hover{
+  background-color: #d3bd5c;
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) #d3bd5c;
+}
+
+#button-seniortrip img {
+  transform: scale(0.12);
+}
+#button-seniortrip a {
+  display: inline-block;
+  background-image: url(images/senior-trip-thumbnail.png);
+  background-position: 77% 121%;
+  background-repeat: no-repeat;
+  background-size: 177%;
+  background-color: #d3bd5c;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) #33ffcc;
+  position: relative;
+  isolation: isolate; /* optional */
+  /* z-index: 0;  <-- remove this */
+}
+
+#button-seniortrip a:hover{
+  background-color: #d3bd5c;
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) #33ffcc;
+}
+
+#button-seniorgroupchat span {
+  font-size: 40%;
+  position: relative;
+  top: -70px;
+  white-space: normal;
+}
+
+#button-seniorgroupchat a {
+  background-image: url(https://i9.ytimg.com/vi_webp/BE97R1Ya8Qw/mqdefault.webp?v=6653ef8b&sqp=CKT8lccG&rs=AOn4CLD5mFDXgsAPwS_33lLoC88sUU3JjQ);
+  background-position: 20% 75%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: black;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) var(--offblack);
+}
+
+#button-seniorgroupchat a img {
+  scale: 0.17;
+}
+
+#button-seniorgroupchat a:hover{
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) var(--offblack);
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(4px, 5px); }
+  50% { transform: translate(0, 8px); }
+  75% { transform: translate(-5px, 4px); }
+  100% { transform: translate(0, 0); }
+}
