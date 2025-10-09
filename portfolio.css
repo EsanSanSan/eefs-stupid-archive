@@ -108,6 +108,7 @@ body {
   justify-items: center;     /* Keeps individual items centered within cells */
   padding: 0;
   margin: 0 auto;
+  margin-bottom: 12rem;
   list-style: none;
   max-width: fit-content;    /* ✅ Makes the container width shrink to grid size */
 }
@@ -135,7 +136,7 @@ body {
 }
 
 #button-home a {
-  background-color: var(--baured);
+  background-color: var(--baured) !important;
   border-radius: 50%;
   box-shadow: 0 0 0 var(--border-gap) var(--offwhite),
               0 0 0 var(--border-nonhover) var(--baured);
@@ -204,7 +205,25 @@ a span {
               0 0 0 var(--border-hover) #c46565;
 }
 
-a {
+#button-vodka-poster a {
+  --height: 400px;
+  background-image: url(images/vodka-poster.png);
+  background-position: center;
+  background-size: contain;
+  width: 300px;
+  height: var(--height);
+  border-radius: 0%;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite),
+              0 0 0 var(--border-nonhover) #58c2d2;
+}
+
+#button-vodka-poster a:hover {
+  background-color: #58c2d2;
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite),
+              0 0 0 var(--border-hover) var(--bauyellow);
+}
+
+a:not(#socials) {
   background-color: var(--bauyellow);
 }
 
