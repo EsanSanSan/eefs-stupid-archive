@@ -176,7 +176,7 @@ a span {
   text-shadow: none;
   font-size: 30%;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.25;
   white-space: nowrap;
   pointer-events: none;
   transition: top 0.2s ease; /* smooth motion when hovering */
@@ -221,6 +221,60 @@ a span {
   background-color: #58c2d2;
   box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite),
               0 0 0 var(--border-hover) var(--bauyellow);
+}
+
+#button-rice-poster a {
+  --height: 450px;
+  background-image: url(images/rice-poster.png);
+  background-position: center;
+  background-size: contain;
+  width: 300px;
+  height: var(--height);
+  border-radius: 0%;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite),
+              0 0 0 var(--border-nonhover) #9285fc;
+}
+
+#button-rice-poster a:hover {
+  background-color: #58c2d2;
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite),
+              0 0 0 var(--border-hover) #9285fc;
+}
+
+#button-ultrakill-poster a {
+  --height: 450px;
+  background-image: url(images/ultrakill-poster.png);
+  background-position: center;
+  background-size: contain;
+  width: 300px;
+  height: var(--height);
+  border-radius: 0%;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite),
+              0 0 0 var(--border-nonhover) #ff0c0c;
+}
+
+#button-ultrakill-poster a:hover {
+  background-color: #58c2d2;
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite),
+              0 0 0 var(--border-hover) #bf0000;
+}
+
+#button-ado-poster a {
+  --height: 450px;
+  background-image: url(images/ado-poster.jpg);
+  background-position: center;
+  background-size: contain;
+  width: 300px;
+  height: var(--height);
+  border-radius: 0%;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite),
+              0 0 0 var(--border-nonhover) #8b74ff;
+}
+
+#button-ado-poster a:hover {
+  background-color: #58c2d2;
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite),
+              0 0 0 var(--border-hover) #0020bf;
 }
 
 a:not(#socials) {

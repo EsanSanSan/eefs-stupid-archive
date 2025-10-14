@@ -78,6 +78,7 @@ body {
   font-size: 13rem;
   color: var(--baured);
   font-weight: 900;
+  line-height: 1;
   margin-bottom: 1rem;
   opacity: 0;
   transform: translateY(100px);
