@@ -12,6 +12,7 @@
   --border-nonhover: calc(var(--border-gap) + var(--border-size));
   --border-gap-hover: calc(var(--border-gap) + var(--border-expand));
   --border-hover: calc(var(--border-gap-hover) + var(--border-size));
+  --button-size: 20.8vw;
 }
 
 
@@ -83,13 +84,13 @@ span#Ethan {
   align-items: center;
   text-shadow: 2px 2px 0 var(--offblack);
   flex-direction: column;
-  width: 300px;
-  height: 300px;
+  width: var(--button-size);
+  height: var(--button-size);
   margin-bottom: 14rem;
   border-radius: 50%;
   font-weight: bold;
   text-align: center;
-  font-size: 3.2rem;
+  font-size: calc(var(--button-size)*0.15);
   line-height: 1;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
@@ -130,9 +131,11 @@ span#Ethan {
   z-index: 0;
 }
 
+
 #graphicdesign a {
   background-color: var(--baublue);
   box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) var(--baublue);
+  font-size: calc(var(--button-size) * 0.1);
 }
 
 #graphicdesign a:hover{
@@ -242,7 +245,7 @@ span#Ethan {
   position: absolute;
   top: 0; /* adjust to align exactly with visible button */
   left: 0; /* adjust to align exactly with visible button */
-  width: 150px; /* same as visible button */
+  width: 50px; /* same as visible button */
   height: 50px; /* same as visible button */
   opacity: 0; /* invisible but clickable */
   border: none;
