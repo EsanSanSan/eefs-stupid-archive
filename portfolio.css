@@ -97,6 +97,7 @@ body {
   transform: translateY(100px);
   animation: slideUpHi 0.8s ease-out forwards;
   animation-delay: 0.65s;
+  line-height: 1;
 }
 
 /* Grid container for links */
