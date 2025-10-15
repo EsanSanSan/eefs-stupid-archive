@@ -11,6 +11,7 @@
   --border-nonhover: calc(var(--border-gap) + var(--border-size));
   --border-gap-hover: calc(var(--border-gap) + var(--border-expand));
   --border-hover: calc(var(--border-gap-hover) + var(--border-size));
+  --button-size: 20.8vw;
 }
 
 @keyframes slideUpHi {
@@ -118,8 +119,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 300px;
-  height: 300px;
+  width: var(--button-size);
+  height: var(--button-size);
   border-radius: 50%;
   color: var(--offwhite);
   text-shadow: var(--offblack) 2.5px 2.5px 0;
@@ -168,6 +169,23 @@ body {
   text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
   top: 5rem;
   line-height: 1;
+}
+
+#button-incidentquiz a {
+  background-image: url(https://uquiz.com/content/images/personalities/personality_images/461156_1732680334_1abc3dfd-0610-42ec-81d5-9348fdcc1161.jpg);
+  background-position: center 0rem;
+  background-size: 30rem;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) #286493;
+
+}
+
+#button-incidentquiz a:hover {
+  background-color: #286493;
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) #286493;
+}
+
+#button-incidentquiz span {
+    font-size: calc(var(--button-size)*0.08);
 }
 
 a {
