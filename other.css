@@ -188,6 +188,23 @@ body {
     font-size: calc(var(--button-size)*0.08);
 }
 
+#button-cliquequiz a {
+  background-image: url(https://i.imgflip.com/a3yrze.jpg);
+  background-size: 20rem;
+  background-position: right;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) #286493;
+
+}
+
+#button-cliquequiz a:hover {
+  background-color: #286493;
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) #286493;
+}
+
+#button-cliquequiz span {
+    font-size: calc(var(--button-size)*0.08);
+}
+
 a {
   background-color:var(--bauyellow);
 }
