@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
   const questions = [
-    { q: "What is 2 + 2?", a: "4" },
-    { q: "Type the secret word: banana", a: "banana" },
-    { q: "What color is the sky on a clear day?", a: "blue" }
+    { q: "What is 2 + 2?", a: ["4", "four"] },
+    { q: "Type the secret word: banana", a: ["banana"] },
+    { q: "What color is the sky on a clear day?", a: ["blue"] }
   ];
 
   let currentQuestion = 0;
@@ -18,39 +18,35 @@ document.addEventListener("DOMContentLoaded", function() {
     questionText.textContent = questions[currentQuestion].q;
     answerInput.value = "";
     feedback.textContent = "";
-    answerInput.focus(); // optional: auto-focus the box
+    answerInput.focus();
   }
 
-function checkAnswer() {
-  const userAnswer = answerInput.value.trim().toLowerCase();
-  const correctAnswer = questions[currentQuestion].a.trim().toLowerCase();
+  function checkAnswer() {
+    const userAnswer = answerInput.value.trim().toLowerCase();
+    const correctAnswers = questions[currentQuestion].a.map(a => a.trim().toLowerCase());
 
-  if (userAnswer === correctAnswer) {
-    currentQuestion++;
-    if (currentQuestion < questions.length) {
-      showQuestion();
+    if (correctAnswers.includes(userAnswer)) {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        vault.style.visibility = "visible";
+        vault.style.pointerEvents = "auto";
+
+        // Reverse slam animation
+        overlay.style.animation = "vaultSlamOut 0.6s ease-in forwards";
+
+        overlay.addEventListener("animationend", function handleEnd() {
+          overlay.style.display = "none";
+          overlay.removeEventListener("animationend", handleEnd);
+        });
+      }
     } else {
-      vault.style.visibility = "visible";
-      vault.style.pointerEvents = "auto";
-
-      // 🆕 Trigger reverse slam animation
-      overlay.style.animation = "vaultSlamOut 0.6s ease-in forwards";
-
-      // After animation ends, hide overlay
-      overlay.addEventListener("animationend", function handleEnd() {
-        overlay.style.display = "none";
-        overlay.removeEventListener("animationend", handleEnd);
-      });
+      feedback.textContent = "❌ WRONG BITCH";
     }
-  } else {
-    feedback.textContent = "❌ WRONG BITCH";
   }
-}
-
 
   submitBtn.addEventListener("click", checkAnswer);
-
-  // 🆕 Pressing Enter triggers the same as clicking submit
   answerInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       checkAnswer();

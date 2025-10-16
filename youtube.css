@@ -209,6 +209,30 @@ background-image: url(svgs/feenie.svg);
   box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) var(--offblack);
 }
 
+#button-dormincident a {
+  background-image: url(images/dormincidentthumbnail.jpg);
+  background-position: -24rem -4rem;
+  background-repeat: no-repeat;
+  background-size: 230%;
+  background-color: black;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) #693627;
+}
+
+#button-dormincident a img {
+  scale: 0.17;
+}
+
+#button-dormincident a:hover{
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) #ff782b;
+}
+#button-dormincident span {
+  font-size: 50%;
+  position: relative;
+  top: -30px;
+  max-width: 80%;
+  white-space: normal;
+}
+
 /* Wiggle animation */
 @keyframes wiggle {
   0% { transform: translate(0, 0); }
