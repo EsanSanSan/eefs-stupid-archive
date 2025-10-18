@@ -209,9 +209,9 @@ a span {
 #button-vodka-poster a {
   --height: 400px;
   background-image: url(images/vodka-poster.png);
-  background-position: center;
-  background-size: contain;
-  width: 300px;
+  background-position: 0;
+  background-size: cover;
+  width: 284px;
   height: var(--height);
   border-radius: 0%;
   box-shadow: 0 0 0 var(--border-gap) var(--offwhite),
