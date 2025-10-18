@@ -174,13 +174,15 @@ body {
 #button-incidentquiz a {
   background-image: url(https://uquiz.com/content/images/personalities/personality_images/461156_1732680334_1abc3dfd-0610-42ec-81d5-9348fdcc1161.jpg);
   background-position: center 0rem;
+  background-color: rgba(0, 0, 0, 0.363);
+  background-blend-mode: multiply;
   background-size: 30rem;
   box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) #286493;
 
 }
 
 #button-incidentquiz a:hover {
-  background-color: #286493;
+  background-color: rgba(0, 0, 0, 0);
   box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) #286493;
 }
 
