@@ -303,3 +303,21 @@ span#Ethan {
   filter: drop-shadow(2px 2px 0 #207918) 
           drop-shadow(-2px -2px 0 #207918);
 }
+
+#vaultlink {
+  width: 50px;
+  height: 50px;
+  fill: var(--baugreen);
+  margin-left: 20px;
+  opacity: 0;
+  position: relative;
+  top: 30px;
+  transition: 0.2s;
+}
+
+#vaultlink:hover, #keyhole:hover {
+  scale: 1.2;
+  transition: 0.2s;
+  opacity: 1;
+  filter: drop-shadow(1px 1px 0 var(--offblack)) 
+}
