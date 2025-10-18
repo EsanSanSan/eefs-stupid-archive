@@ -233,6 +233,23 @@ background-image: url(svgs/feenie.svg);
   white-space: normal;
 }
 
+#button-bestiescomp a {
+  background-color: #00000046;
+  background-image: url(vault/images/bestiescomp.png);
+  background-blend-mode: multiply;
+  background-size: 151%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--border-gap) var(--offwhite),
+              0 0 0 var(--border-nonhover) var(--baublue);
+  width: 300px;
+  height: 300px;
+}
+
+#button-bestiescomp a:hover {
+  box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite),
+              0 0 0 var(--border-hover) var(--baublue);
+}
+
 /* Wiggle animation */
 @keyframes wiggle {
   0% { transform: translate(0, 0); }

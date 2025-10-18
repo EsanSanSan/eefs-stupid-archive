@@ -181,28 +181,42 @@ a {
               0 0 0 var(--border-hover) var(--baublue);
 }
 
-#button-bestiescomp a {
-  background-color: var(--baublue);
-  background-image: url(images/bestiescomp.png);
-  background-size: 151%
-  background-position: center;
-  border-radius: 50%;
+#button-kabukicho-poster a {
+  --height: 612px;
+  background-image: url(images/kabukicho-poster.png);
+  background-position: 0;
+  background-size: cover;
+  width: 396px;
+  height: var(--height);
+  border-radius: 0%;
   box-shadow: 0 0 0 var(--border-gap) var(--offpurple),
-              0 0 0 var(--border-nonhover) var(--baublue);
-  width: 300px;
-  height: 300px;
+              0 0 0 var(--border-nonhover) #8b74ff;
 }
 
-#button-bestiescomp a:hover {
-  background-color: var(--baublue);
+#button-kabukicho-poster a:hover {
+  background-color: #58c2d2;
   box-shadow: 0 0 0 var(--border-gap-hover) var(--offpurple),
-              0 0 0 var(--border-hover) var(--baublue);
+              0 0 0 var(--border-hover) #0020bf;
 }
 
 #giveup {
   margin-bottom: 260px;
 }
 
+a span {
+  position: absolute;
+  top: calc(100% + calc(var(--border-nonhover) + 0.75rem)); /* places below shadow ring */
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--offblack);
+  text-shadow: none;
+  font-size: 30%;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: top 0.2s ease; /* smooth motion when hovering */
+}
 
 #vaultlocked {
   visibility: hidden;

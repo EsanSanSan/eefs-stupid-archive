@@ -190,14 +190,14 @@ body {
 
 #button-cliquequiz a {
   background-image: url(https://i.imgflip.com/a3yrze.jpg);
-  background-size: 20rem;
-  background-position: right;
+  background-size: cover; 
   box-shadow: 0 0 0 var(--border-gap) var(--offwhite), 0 0 0 var(--border-nonhover) #286493;
+    background-color: #00000046;
+  background-blend-mode: multiply;
 
 }
 
 #button-cliquequiz a:hover {
-  background-color: #286493;
   box-shadow: 0 0 0 var(--border-gap-hover) var(--offwhite), 0 0 0 var(--border-hover) #286493;
 }
 
